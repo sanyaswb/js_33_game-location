@@ -1,12 +1,12 @@
-const canMove = require('./index');
+const move = require('./index');
 const solution = require('./system/solution');
 const { getRandomInt } = require('./system/environment');
 const { locations } = require('./assets/locations');
 
-test('Функция должна вернуть булиновое значение', () => {
-	const res = canMove(locations[0].matrix, locations[0].actorCoordinates, 'left');
+test('Функция должна вернуть строку', () => {
+	const res = move(locations[0].matrix, locations[0].actorCoordinates, 'left');
 
-	expect(typeof res).toBe('boolean');
+	expect(typeof res).toBe('string');
 });
 
 test('Auto: random outcomes', () => {
@@ -16,7 +16,7 @@ test('Auto: random outcomes', () => {
 		const direction = possibleDirections[getRandomInt(0, possibleDirections.length - 1)];
 
 		const solutionResult = solution(matrix, actorCoordinates, direction);
-		const userResult = canMove(matrix, actorCoordinates, direction);
+		const userResult = move(matrix, actorCoordinates, direction);
 
 		expect(userResult).toBe(solutionResult);
 	}

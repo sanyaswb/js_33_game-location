@@ -1,5 +1,5 @@
-function canMove(location, actorCoordinates, direction) {
+function move(location, actorCoordinates, direction) {
 	// write your code here
 }
 
-module.exports = canMove;
+module.exports = move;

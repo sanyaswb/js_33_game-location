@@ -16,13 +16,13 @@ const makeMatrix = () => {
 		const row = [];
 
 		for (let j = 0; j < rowLength; j++) {
-			const rand = getRandomInt(0, 1);
+			const rand = getRandomInt(1, 4);
 
 			if (i === 0 || j === 0 || i === matrixLength - 1 || j === rowLength - 1) {
 				row.push('B');
 			} else if (actorCoordinates.x === j && actorCoordinates.y === i) {
 				row.push('A');
-			} else if (rand) {
+			} else if (rand === 1) {
 				row.push('O');
 			} else {
 				row.push('E');
